@@ -1,0 +1,8 @@
+CREATE TABLE tb_processamento(
+	id_processamento BIGINT(20) PRIMARY KEY AUTO_INCREMENT,
+	data DATE NOT NULL,
+	loja INT NOT NULL,
+	pdv INT NOT NULL,
+	nome_arquivo VARCHAR(20),
+	status VARCHAR(14) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt"xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymelea.org">
+<head>
+	<meta charset="UTF-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+	<title>Brewer</title>
+
+	<link rel="stylesheet" type="text/css" href="/entry/layout/stylesheets/vendors.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/entry/layout/stylesheets/algaworks.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/entry/layout/stylesheets/application.css"/>
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<h1>Olá! Thymeleaf configurado!</h1>
+
+<div th:each="erro : ${#fields.detailedErrors('${venda.*}')}">
+		<span th:text="${erro.message}"></span>
+</div>
+	
+<form method="POST" th:object="${venda}">
+	<!-- <span th:text="${#fields.hasAnyErrors()}"></span> -->
+	
+	<!-- <div th:each="erro : ${#fields.detailedErrors()}">
+		<span th:text="${erro.message}"></span>
+	</div> -->
+	
+	<span th:text="${mensagem}">Erro!</span>
+	<br>
+	
+	<label for="id">Id</label> 
+	<input type="text" id="id" th:field="*{id}"> 
+	<br> 
+	
+	<label for="data">Data</label> 
+	<input type="date" id="data" th:field="*{data}"> 
+	<br> 
+	
+	<label for="loja">Loja</label> 
+	<input type="text" id="loja" th:field="*{loja}">
+	<br> 
+	
+	<label for="pdv">PDV</label> 
+	<input type="text" id="pdv" th:field="*{pdv}">
+	<br>
+	
+	<label for="status">Status</label> 
+	<input type="text" id="status" th:field="*{status}">
+	<br>
+	
+	<input type="submit" value="Salvar">
+</form>
+</body>
+</html>
